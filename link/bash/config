@@ -1,5 +1,21 @@
 export PS1='\[\e[1;31m\]\w\[\e[1;32m\]$(__git_ps1 "(%s)")\[\e[m\]\$ '
-export EDITOR="mate -w"
 export LSCOLORS='ExFxcxdxBxegedabagacad'
 export GREP_OPTIONS="--color=auto"
 export GREP_COLOR="7;33"
+
+
+PS1='\[\e[1;31m\][\u@\h \W]\$\[\e[m\e]0;in "\W" as \u@\h\a\] '
+# use TextMate for svn etc
+# export VISUAL="mate -w"
+# export EDITOR="mate -w"
+export VISUAL='open -a /Applications/Emacs.app "$@"'
+export EDITOR='open -a /Applications/Emacs.app "$@"'
+
+export GREP_OPTIONS='--color=auto' 
+export GREP_COLOR='1;32'
+
+#export ARCHFLAGS="-arch i386"
+
+export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6.0/Home
+
+

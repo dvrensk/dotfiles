@@ -2,6 +2,8 @@
 
 # changing directory to code project
 function p { cd ~/Projects/$1; }
+function i { cd ~/Icehouse/$1; }
+#function hm { cd ~/Projects/HittaMäklare/$1; }
 
 # alternative to "rails" command to use templates
 function railsapp {
@@ -15,3 +17,33 @@ alias reload='. ~/.bash_profile'
 # textmate
 # alias ett='mate `ls -I tmp -I vendor -I log`'
 alias etr="mate app config lib db schema public spec test Rakefile Capfile Gemfile Gemfile.lock README stories features"
+
+# ss() {
+#   if [ -x script/server ]; then
+#     script/server
+#   else
+#     if [ -x script/rails ]; then
+#       rails s
+#     else
+#       echo "Could not find script/server or script/rails"
+#     fi
+#   fi
+# }
+# 
+# cons() {
+#   if [ -x script/server ]; then
+#     script/console
+#   else
+#     if [ -x script/rails ]; then
+#       rails c
+#     else
+#       echo "Could not find script/server or script/rails"
+#     fi
+#   fi
+# }
+
+alias ss='if [ -x script/server ]; then script/server; else if [ -x script/rails ]; then rails s; else echo "Could not find script/server or script/rails"; fi; fi'
+
+alias cons='if [ -x script/server ]; then script/console; else if [ -x script/rails ]; then rails c ; else echo "Could not find script/server or script/rails" ; fi ; fi'
+
+alias emacs='open -a /Applications/Emacs.app'

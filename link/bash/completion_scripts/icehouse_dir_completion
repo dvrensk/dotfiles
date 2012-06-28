@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require File.join(File.dirname(__FILE__), 'project_completion')
+
+puts ProjectCompletion.new('~/Icehouse', ENV["COMP_LINE"]).matches
+exit 0

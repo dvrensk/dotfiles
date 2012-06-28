@@ -56,7 +56,15 @@ end
 load File.dirname(__FILE__) + '/.railsrc' if $0 == 'irb' && ENV['RAILS_ENV']
 
 if defined? Rails
-  puts "Loading your blueprints..."
-  require Rails.root.join("spec", "blueprints") if File.exists?(Rails.root.join("spec", "blueprints.rb"))
-  require Rails.root.join("spec", "support", "blueprints") if File.exists?(Rails.root.join("spec", "support", "blueprints.rb"))
+  [Rails.root.join("spec", "blueprints.rb"), Rails.root.join("test", "blueprints.rb"), Rails.root.join("spec", "support", "blueprints.rb")].each do |blueprints|
+    if File.exists?(blueprints)
+      puts "Loading your blueprints from #{blueprints}"
+      require blueprints.sub(/\.rb$/,'')
+    end
+  end
+  def sqllog(ignore = nil)
+    @old_sql_log ||= Logger.new(STDOUT)
+    ActiveRecord::Base.logger, @old_sql_log = @old_sql_log, ActiveRecord::Base.logger
+    "toggled"
+  end
 end

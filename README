@@ -1,4 +1,8 @@
-Ryan Bates Dot Files
+Based on Ryan Bates Dot Files (github.com/ryanb/dotfiles -> github.com/elabs/dotfiles).
+
+Run `./setup_dotfiles` to install.
+
+=====
 
 These are config files to set up a system the way I like it.
 

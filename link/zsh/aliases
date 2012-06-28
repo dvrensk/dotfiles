@@ -45,3 +45,54 @@ alias gaia="ssh gaia.elabs.se"
 
 # commands starting with % for pasting from web
 alias %=' '
+
+####
+
+alias cons=script/console
+alias ss=script/server
+alias sst='script/server -e test -p 3001'
+# Project aliases
+alias evf='cd ~/Projects/Informo/Easyvibe/forum/phpBB3'
+alias hm='cd ~/Projects/HittaMaklare/appen/hittamaklare'
+alias inf='cd ~/Projects/Informo'
+alias inv='cd ~/Projects/MyOwnBestFriend/invoice'
+alias ir2='cd ~/Projects/Loke/IR2/loke-ir2'
+alias k2='cd ~/Projects/Loke/Klassrum/klassrum2'
+alias mpn='cd ~/Icehouse/mittpostnummer'
+alias mpnd='cd ~/Icehouse/git-data/mpn-masterlists'
+alias mobf='cd ~/Projects/MyOwnBestFriend'
+alias nos='cd ~/Projects/Informo/NOS/nos-wopr'
+alias obs='cd ~/Icehouse/obsenter/javascript'
+alias proj='cd ~/Projects'
+alias rasm='cd ~/Projects/wcj.nu/rasmus'
+alias rel='cd ~/Icehouse/hadoop/relepig'
+alias serv='cd ~/Icehouse/serverconfig'
+alias sis='cd ~/Projects/wcj.nu/sis-app/swingin-spring'
+alias spi='cd ~/Icehouse/spiders'
+alias sma='cd ~/Icehouse/smartass'
+alias sw='cd ~/Projects/wcj.nu/swingweb'
+alias tinet='cd ~/Projects/Elabs/tinetmodel'
+alias tru='cd ~/Icehouse/truman'
+alias wit='cd ~/Icehouse/Witsbits/witsbits; export WITSBITS_USER=icehouse; export PATH=./bin:$PATH'
+
+# From topfunky
+alias gb='git branch'
+alias gba='git branch -a'
+alias gc='git commit -v'
+alias gca='git commit -v -a'
+alias gco='git checkout'
+alias gd='git diff | mate'
+alias gl='git pull'
+alias gp='git push'
+alias gst='git status'
+# More in the same vein
+alias glt='git log --pretty=oneline --graph --all'
+
+
+mans () {
+  open man:$1
+}
+function wman() {
+   url="man -w ${1} | sed 's#.*\(${1}.\)\([[:digit:]]\).*\$#http://developer.apple.com/documentation/Darwin/Reference/ManPages/man\2/\1\2.html#'"
+   open `eval $url`
+}

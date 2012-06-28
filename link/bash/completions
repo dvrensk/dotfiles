@@ -1,4 +1,6 @@
 source ~/.bash/completion_scripts/git_completion
 complete -C ~/.bash/completion_scripts/rake_completion -o default rake
-complete -C ~/.bash/completion_scripts/project_completion -o default p
+complete -C ~/.bash/completion_scripts/project_dir_completion -o default -o nospace p
+complete -C ~/.bash/completion_scripts/icehouse_dir_completion -o default -o nospace i
+complete -C ~/.bash/completion_scripts/hm_dir_completion -o default -o nospace hm
 complete -C ~/.bash/completion_scripts/capistrano_completion -o default cap

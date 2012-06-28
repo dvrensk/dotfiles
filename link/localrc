@@ -1,0 +1,27 @@
+function __pwd2 {
+  local wd pd
+  wd=$(pwd)
+  #wd=${PWD/$HOME/\~}
+  pd=${wd%/*}
+  echo ${pd##*/}/${wd##*/}
+}
+
+# more gittery
+. ~/.dotfiles/link/bash/completion_scripts/git_completion
+function __git_info {
+  local branch
+  branch=$(git branch 2> /dev/null)
+  test -z "$branch" && return
+  branch=$(grep '^*' <<<"$branch" | cut -c3-)
+  echo " ($branch)"
+}
+
+
+#if [ -f ~/.rvm/bin/rvm ] ; then source ~/.rvm/bin/rvm ; fi
+# RTFM:  http://rvm.beginrescueend.com/
+# HELP:  http://webchat.freenode.net/?channels=rvm 
+if [[ -s ~/.rvm/scripts/rvm ]] ; then
+  PS1='\[\e[1;31m\][\u@\h $(__pwd2)]$(__git_info) \[\e[m[$(~/.rvm/bin/rvm-prompt v p g)]\[\e[1;31m\]\n\$\[\e[m\e]0;in "\W" as \u@\h\a\] '
+fi
+
+export PATH=/usr/local/storm/bin:$PATH
