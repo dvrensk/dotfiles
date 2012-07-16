@@ -51,3 +51,8 @@
 	default = current
 [branch "master"]
 	rebase = true
+[advice]
+	statusHints = false
+[diff]
+	renames = copies
+	mnemonicprefix = true
