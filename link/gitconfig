@@ -1,0 +1,53 @@
+[user]
+	name = David Vrensk
+	email = david@vrensk.com
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+# [color "branch"]
+#   current = yellow reverse
+#   local = yellow
+#   remote = green
+# [color "diff"]
+#   meta = yellow bold
+#   frag = magenta bold
+#   old = red bold
+#   new = green bold
+# [color "status"]
+#   added = yellow
+#   changed = green
+#   untracked = cyan
+[color "branch"]
+  current = green reverse
+  local = green
+  remote = blue
+[color "diff"]
+  meta = blue
+  frag = black
+  old = red
+  new = green
+[color "status"]
+  added = green
+  changed = red
+  untracked = blue
+[gui]
+	recentrepo = /Users/david/tmp/repos/informo/nos-wopr.git
+[alias]
+	b = branch
+	ba = branch -a
+	c = commit
+	ca = commit -a
+	co = checkout
+	lt = log --pretty=oneline --graph --all
+	p = push
+	pl = pull
+	st = status
+	unadd = reset HEAD
+[core]
+	excludesfile = ~/.gitignore
+	editor = mate -w
+[push]
+	default = current
+[branch "master"]
+	rebase = true

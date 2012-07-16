@@ -2,10 +2,17 @@
 
 for f in `pwd`/copy/*
 do
-  cp -i $f ~/.`basename $f` 
+    cp -i $f ~/.`basename $f`
 done
 
 for f in `pwd`/link/*
 do
-  ln -nsi $f ~/.`basename $f` 
+    link_to_be=~/.`basename $f`
+    if [ -f $link_to_be -a ! -L $link_to_be ]; then
+        read -p "Diff $f and $link_to_be? "
+        [[ $REPLY == "y" ]] && diff $f $link_to_be
+    fi
+    if [ "$f" != "`readlink $link_to_be`" ]; then
+        ln -nsi $f $link_to_be
+    fi
 done
