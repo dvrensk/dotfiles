@@ -2,7 +2,7 @@
 
 for f in `pwd`/copy/*
 do
-    cp -i $f ~/.`basename $f`
+    [[ -f $f ]] && cp -i $f ~/.`basename $f`
 done
 
 for f in `pwd`/link/*
