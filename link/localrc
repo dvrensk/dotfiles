@@ -6,6 +6,13 @@ function __pwd2 {
   echo ${pd##*/}/${wd##*/}
 }
 
+function __shlvl {
+    if [ $SHLVL -gt 1 ]
+    then
+        echo " [$SHLVL]"
+    fi
+}
+
 # more gittery
 . ~/.dotfiles/link/bash/completion_scripts/git_completion
 function __git_info {
@@ -21,7 +28,5 @@ function __git_info {
 # RTFM:  http://rvm.beginrescueend.com/
 # HELP:  http://webchat.freenode.net/?channels=rvm 
 if [[ -s ~/.rvm/scripts/rvm ]] ; then
-  PS1='\[\e[1;31m\][\u@\h $(__pwd2)]$(__git_info) \[\e[m[$(~/.rvm/bin/rvm-prompt v p g)]\[\e[1;31m\]\n\$\[\e[m\e]0;in "\W" as \u@\h\a\] '
+  PS1='\[\e[1;31m\][\u@\h \[\e[1;30m\]$(__pwd2)\[\e[1;31m\]]$(__git_info) \[\e[m[$(~/.rvm/bin/rvm-prompt v p g)]\[\e[1;32m\]$(__shlvl)\[\e[1;31m\]\n\$\[\e[m\e]0;in "\W" as \u@\h\a\] '
 fi
-
-export PATH=/usr/local/storm/bin:$PATH
