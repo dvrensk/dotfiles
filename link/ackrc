@@ -1,3 +1,5 @@
 --type-add=ruby=.feature
 --type-add=html=.erb
 --type-set=clojure=.clj
+--type-add=html=.tpl
+--type-set=coffee=.coffee

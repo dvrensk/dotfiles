@@ -47,3 +47,4 @@ alias ss='if [ -x script/server ]; then script/server; else if [ -x script/rails
 alias cons='if [ -x script/server ]; then script/console; else if [ -x script/rails ]; then rails c ; else echo "Could not find script/server or script/rails" ; fi ; fi'
 
 alias emacs='open -a /Applications/Emacs.app'
+alias emacsnw="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
