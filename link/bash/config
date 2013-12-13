@@ -1,3 +1,4 @@
+# -*- mode: shell-script -*-
 export PS1='\[\e[1;31m\]\w\[\e[1;32m\]$(__git_ps1 "(%s)")\[\e[m\]\$ '
 export LSCOLORS='ExFxcxdxBxegedabagacad'
 export GREP_OPTIONS="--color=auto"
@@ -23,3 +24,6 @@ else
 fi
 
 export LESSOPEN="|lesspipe.sh %s"
+
+# Terminal.app sets this to xterm-256color which makes Ubuntu skip the colour prompt
+export TERM=xterm-color
