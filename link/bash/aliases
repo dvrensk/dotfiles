@@ -1,23 +1,5 @@
 . ~/.zsh/aliases
 
-# changing directory to code project
-function p { cd ~/Projects/$1; }
-function i { cd ~/Icehouse/$1; }
-#function hm { cd ~/Projects/HittaMäklare/$1; }
-
-# alternative to "rails" command to use templates
-function railsapp {
-  appname=$1
-  rails $appname -m http://github.com/unders/rails-1-2-3-launcher/raw/master/generate.rb $@
-}
-
-# misc
-alias reload='. ~/.bash_profile'
-
-# textmate
-# alias ett='mate `ls -I tmp -I vendor -I log`'
-alias etr="mate app config lib db schema public spec test Rakefile Capfile Gemfile Gemfile.lock README stories features"
-
 # ss() {
 #   if [ -x script/server ]; then
 #     script/server

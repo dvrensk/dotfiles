@@ -2,3 +2,6 @@ export PATH="~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
 export MANPATH="/usr/local/man:/usr/local/mysql/man:$MANPATH"
 export GOPATH=$HOME/Projects/golang
 export PATH=$PATH:$HOME/mygo/bin
+if [ -f $HOME/Projects/ansible/hacking/env-setup ]; then
+    source $HOME/Projects/ansible/hacking/env-setup -q
+fi
