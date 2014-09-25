@@ -16,11 +16,17 @@ function __shlvl {
 # more gittery
 . ~/.dotfiles/link/bash/completion_scripts/git_completion
 function __git_info {
-  local branch
-  branch=$(git branch 2> /dev/null)
-  test -z "$branch" && return
-  branch=$(grep '^*' <<<"$branch" | cut -c3-)
-  echo " ($branch)"
+    local branch
+    branch=$(git branch 2> /dev/null)
+    test -z "$branch" && return
+    branch=$(grep '^*' <<<"$branch" | cut -c3-)
+    user=$(git config --get user.name)
+    if [[ "$user" == "David Vrensk" ]]; then
+        user=""
+    else
+        user=" as $user"
+    fi
+    echo " ($branch$user)"
 }
 
 

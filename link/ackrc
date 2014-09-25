@@ -3,3 +3,4 @@
 --type-set=clojure=.clj
 --type-add=html=.tpl
 --type-set=coffee=.coffee
+--type-set=sass=.scss
